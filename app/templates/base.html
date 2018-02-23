@@ -1,0 +1,28 @@
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Survey Monkey </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- 1. import css file here -->
+
+<!-- how to extend header to other templates -->
+    <div id="site-title-wrapper">
+      <div href=# id="site-icon-wrapper">
+        <img src="https://cdn.smassets.net/wp-content/uploads/2017/05/CR1651_meet_goldie_v2.2kk.png">
+      </div>
+      <h3 id="site-title">Survey Monkey</h3>
+    </div>
+  </head>
+
+  <body>
+    {% block body %}
+    {% endblock %}
+    <div id="content">{% block content %}{% endblock %}</div>
+    <footer>
+      <p>&copy; A Survey Monkey Inmitation App</p>
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='interactions.js') }}"></script>
+  </body>
+</html>
