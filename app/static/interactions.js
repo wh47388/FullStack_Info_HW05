@@ -4,6 +4,17 @@ $('#submit-survey').on('click', function submitSurvey() {
 	var vacation = $("input[name=vacation]").val();
 	var feBefore = $("input[name=front-end-before]").val();
 	var feAfter = $("input[name=front-end-after]").val();
+
+	//Create a $.post() Ajax request with the user's form inputs from 'survey.html'
+	$.post("/submit-survey"
+		,{'color': color
+		,'food': food
+		,'vacation': vacation
+		,'feBefore': feBefore
+		,'feAfter': feAfter}
+		,function(data) {
+			$('html').empty().append(data);
+		})
 });
 
 $("#site-title-wrapper").on('click', function goHome() {
